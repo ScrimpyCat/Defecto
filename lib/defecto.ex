@@ -114,7 +114,7 @@ defmodule Defecto do
     @doc """
       Assert an update produces the expected result and changeset.
     """
-    def assert_update(changeset, result) do
+    defmacro assert_update(changeset, result) do
         quote do
             assert_update(unquote(changeset), unquote(result), @repo)
         end
@@ -131,7 +131,7 @@ defmodule Defecto do
     @doc """
       Assert an update does not produce the expected result and changeset.
     """
-    def refute_update(changeset, result) do
+    defmacro refute_update(changeset, result) do
         quote do
             refute_update(unquote(changeset), unquote(result), @repo)
         end
